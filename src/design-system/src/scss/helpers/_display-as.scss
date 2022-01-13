@@ -1,0 +1,37 @@
+//display block for inline tags
+.dblock {
+  display:block;
+}
+
+//display inline block for block level tags
+.inblock {
+  display:inline-block;
+}
+
+//display grid for set columns
+.dgrid {
+  display:grid;
+}
+
+//display table-caption
+.table-caption {
+  display:table-caption;
+}
+
+//display flex default for all the resolutions
+.dflex-default {
+  flex-wrap:wrap;
+  display:flex;
+  display:-ms-flexbox;
+  -ms-flex-wrap:wrap;
+}
+
+//display flex for the desktops only
+@media(min-width:767px) {
+  .dflex-desktop {
+    flex-wrap:wrap;
+    display:flex;
+    display:-ms-flexbox;
+    -ms-flex-wrap:wrap;
+  }
+}

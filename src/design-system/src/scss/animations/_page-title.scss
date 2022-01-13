@@ -1,0 +1,42 @@
+@include keyframes(pageTilesShow) {
+  0% {
+    top:-15px;
+    opacity:0;
+   }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+
+@include keyframes(pageTilesHide) {
+  0% {
+    top:0;
+    opacity:1;
+   }
+  100% {
+    top:-15px;
+    opacity:0;
+  }
+}
+
+@include keyframes(toggleHide) {
+  0% {
+    top:-43px;
+    opacity:1;
+   }
+  100% {
+    top:-60px;
+    opacity:0;
+  }
+}
+@include keyframes(toggleShow) {
+  0% {
+    top:-60px;
+    opacity:0;
+   }
+  100% {
+    top:-43px;
+    opacity:1;
+  }
+}

@@ -1,0 +1,60 @@
+.sidebar-sticky {
+  top:90px;
+  bottom:0;
+  min-width:230px;
+  &.right {
+    right:0;
+  }
+  &.left {
+    left:0;
+  }
+  a {
+    &:after {
+      content:'';
+      position:absolute;
+      right:0;
+      bottom:0;
+      left:0;
+      background-color:$bgnd-black;
+      height:2px;
+      -webkit-animation:close-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+      -moz-animation:close-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+      animation:close-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+      -webkit-animation-fill-mode:forwards;
+      -moz-animation-fill-mode:forwards;
+      animation-fill-mode:forwards;
+    }
+  }
+  li {
+    display:block;
+    padding:10px 0;
+    opacity:0.6;
+    &:hover {
+      opacity:1;
+    }
+    &.active {
+      opacity:1;
+      a {
+        &:after {
+          content:'';
+          position:absolute;
+          right:0;
+          bottom:0;
+          left:0;
+          opacity:1;
+          background-color:$bgnd-black;
+          height:2px;
+          -webkit-animation:animate-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+          -moz-animation:animate-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+          animation:animate-underline 0.7s cubic-bezier(0.1, 0.4, 0.52, 1.15);
+          -webkit-animation-fill-mode:forwards;
+          -moz-animation-fill-mode:forwards;
+          animation-fill-mode:forwards;
+        }
+      }
+    }
+  }
+  .menu-items-outer {
+    padding:28px 0 0 0;
+  }
+}

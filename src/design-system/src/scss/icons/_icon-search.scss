@@ -1,0 +1,17 @@
+.icon-search {
+  @include transform(rotate(-45deg));
+  span {
+    display:block;
+  }
+  .circle {
+    width:17px;
+    height:17px;
+    border:solid 1px;
+    @include border-radius(100px);
+  }
+  .line {
+    width:1px;
+    height:6px;
+    background-color:$bgnd-black;
+  }
+}

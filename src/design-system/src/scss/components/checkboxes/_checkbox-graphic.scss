@@ -1,0 +1,47 @@
+/*check boxe button*/
+.check-box {
+  &.graphic {
+    padding:12px 12px 12px 40px;
+    transition:box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow:-3px 4px 8px rgba(213, 222, 230, 0.5);
+    }
+    .img-box {
+      width:60px;
+      height:60px;
+    }
+    .pseudo {
+      &:after {
+        @include border-radius(2px);
+        top:12px;
+        left:12px;
+        background-color:rgba(214, 218, 228, 0.4);
+        width:18px;
+        height:18px;
+      }
+      &:before {
+        top:17px;
+        left:17px;
+        width:9px;
+        height:5px;
+      }
+    }
+    .description {
+      font-size:14px;
+      max-width:200px;
+      padding-right:15px;
+    }
+    input[type='checkbox'] {
+      &:checked ~ {
+        .pseudo {
+          &:after {
+            background-color:#6b4ee4;
+          }
+          &:before {
+            opacity:1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.add-transitions,
+.add-transitions span,
+.add-transitions a,
+.add-transitions p,
+.add-transitions div,
+.add-transitions img,
+.add-transitions h1,
+.add-transitions h2,
+.add-transitions h3,
+.add-transitions h4,
+.add-transitions h5,
+.add-transitions h6,
+.add-transitions strong {
+  @include transition(all 0.3s cubic-bezier(0.61, 0.03, 0.43, 0.85))
+}
+
+.overflow-hidden {
+  overflow:hidden;
+}
+.middle {
+  margin: 0 auto;
+}

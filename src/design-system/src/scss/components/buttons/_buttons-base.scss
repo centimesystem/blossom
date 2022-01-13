@@ -1,0 +1,50 @@
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+button:not(label),
+.button:not(label) {
+  -webkit-appearance:none;
+  padding:8px 14px;
+  &.hover-invert {
+    &:hover {
+      background-color:transparent;
+      border-color:$b-black;
+      color:$txt-black;
+    }
+  }
+  &[class*='border-']:not(.bgnd-yellow) {
+    &:hover {
+      background-color:$bgnd-black;
+      color:$txt-white;
+      border-color:$b-black;
+      svg {
+        fill:#fff;
+      }
+    }
+  }
+  &.hover-black {
+    &:hover {
+      background-color:rgba($bgnd-black, 0.8);
+    }
+  }
+  &.hover-yellow {
+    &:hover {
+      background-color:#ff8400;
+    }
+  }
+  &.hover-shadow {
+    &:hover {
+      -webkit-box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+         -moz-box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+          -ms-box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+              box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+    }
+  }
+}
+
+
+.icon-box {
+  width:18px;
+  height:18px;
+  margin-right:4px;
+}

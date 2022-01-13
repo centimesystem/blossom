@@ -1,0 +1,15 @@
+.vertical-aligns-top {
+  i,span,label,div,svg {
+    vertical-align:top;
+  }
+}
+.vertical-aligns-middle {
+  i,span,label,div,svg {
+    vertical-align:middle;
+  }
+}
+.vertical-aligns-base {
+  i,span,label,div,svg {
+    vertical-align:baseline;
+  }
+}

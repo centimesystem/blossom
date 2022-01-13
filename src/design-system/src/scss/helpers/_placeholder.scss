@@ -1,0 +1,7 @@
+input, textarea {
+  @include input-placeholder {
+    color: rgba($txt-black, 0.4);
+  }
+  background-color:transparent;
+  border:none;
+}

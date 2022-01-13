@@ -1,0 +1,30 @@
+.dots {
+  z-index:2;
+  right:18px;
+  top:0;
+  width:40px;
+  height:40px;
+  &.light {
+    span {
+      background-color:$bgnd-white;
+    }
+  }
+  &.dark {
+    span {
+      background-color:$bgnd-black;
+    }
+  }
+  span {
+    width:5px;
+    height:5px;
+    @include border-radius(100px);
+    @include transition(0.3s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    margin:0 2px;
+  }
+}
+.more-type-v {
+  span {
+    display:block;
+    margin:3px 0;
+  }
+}

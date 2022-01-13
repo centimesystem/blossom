@@ -1,0 +1,29 @@
+/*check boxes */
+.check-box {
+  &.outline {
+    span {
+      &:after {
+        border:solid #b8c2cf 2px;
+      }
+    }
+    input[type='checkbox'] {
+      &:checked ~ {
+        span {
+          &:before {
+            border-color:#8ab44b;
+          }
+          &:after {
+            border-color:#8ab44b;
+          }
+        }
+      }
+    }
+    &:hover {
+      span {
+        &:after {
+          border-color:#909090;
+        }
+      }
+    }
+  }
+}

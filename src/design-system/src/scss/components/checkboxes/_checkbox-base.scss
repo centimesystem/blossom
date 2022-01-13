@@ -1,0 +1,31 @@
+.check-box {
+  span {
+    &:before {
+      top:5px;
+      left:5px;
+      z-index:2;
+      width:9px;
+      height:5px;
+      border-bottom:solid $b-white 2px;
+      border-left:solid $b-white 2px;
+      @include transform(rotate(-45deg));
+      opacity:0;
+    }
+    &:after {
+      left:0;
+      top:0;
+      width:18px;
+      height:18px;
+      @include border-radius(3px);
+    }
+  }
+  input[type='checkbox'] {
+    &:checked ~ {
+      span {
+        &:before {
+          opacity:1;
+        }
+      }
+    }
+  }
+}

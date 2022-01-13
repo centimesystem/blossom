@@ -1,0 +1,362 @@
+.header {
+  min-height:90px;
+  padding:0 40px 0 40px;
+  top:0;
+  right:0;
+  left:0;
+  z-index:2;
+  .input-group {
+    top:4px;
+  }
+  .brand-logo {
+    > div {
+      top:3px;
+    }
+    svg {
+      width:36px;
+      height:36px;
+    }
+  }
+  .page-title {
+    padding-left:263px;
+    h1 {
+      font-size:22px;
+    }
+  }
+  .icon-box-32 {
+    pointer-events:none;
+  }
+  .search-clear {
+    width:30px;
+    height:30px;
+    top:0;
+    right:0;
+  }
+  a {
+    text-decoration:none;
+  }
+  input[type=text] {
+    font-size:14px;
+    width:223px;
+    padding:6px 0 14px 32px;
+    @include truncate(90%);
+    &:focus {
+      @include box-shadow(none);
+      @include input-placeholder {
+        color: rgba($txt-black, 0);
+      }
+    }
+  }
+  .input-active {
+    input[type=text] {
+      width:300px;
+    }
+    .search-default {
+      //display:block;
+      height:200px;
+      top:35px;
+      left:0;
+      right:0;
+      min-width:372px;
+      opacity:0;
+      padding:20px 25px;
+      @include box-shadow(-10px 10px 40px rgba($shadow-light, 0.1));
+      @include animation('fadeIn  0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      @include animation-mode(forwards);
+      @include animation-delay(0.1s);
+    }
+  }
+  .underline {
+    width:40px;
+    height:3px;
+    background-color:$orange-yellow;
+    margin-right:12px;
+  }
+  @include breakpoint(default-desktop) {
+    .page-title {
+      padding-left:244px;
+    }
+  }
+  @include breakpoint(iPad-landscape) {
+    padding:20px 40px;
+    .pipe {
+      margin:0 30px;
+      height:24px;
+      opacity:0.1;
+    }
+    input[type=text] {
+      width:0px;
+      padding:6px 14px 14px 23px;
+    }
+    .input-active {
+      input[type=text] {
+        padding-left:35px;
+        width:300px;
+      }
+    }
+    .icon-touch-area {
+      &.pstn-abslt {
+        top:2px;
+      }
+    }
+    .right-nav {
+      justify-content:flex-end;
+    }
+    .underline {
+      position:absolute;
+      right:0;
+      left:0;
+      top:19px;
+      margin-right:0;
+      width:auto;
+    }
+    .icon-search {
+      width:20px;
+      height:20px;
+      top:5px;
+      left:6px;
+      &:before {
+        top:17px;
+        left:15px;
+      }
+    }
+  }
+  @include breakpoint(iPad-portrait) {
+    input[type=text] {
+      position:absolute;
+      top:0;
+      right:0;
+      pointer-events:none;
+    }
+    .input-active {
+      input[type=text] {
+        width:0px;
+      }
+    }
+    .icon-box-32 {
+      position:relative;
+      pointer-events:inherit;
+    }
+    .input-group {
+      top:0;
+    }
+    &.full-screen-search {
+      &:before {
+        z-index:4;
+        top:0;
+        right:0;
+        left:0;
+        @include animation('fullScreenSearch 0.2s ease-in-out');
+        @include animation-mode(forwards);
+        content:'';
+        background-color:$bgnd-white;
+        position:fixed;
+      }
+      &:after {
+        right:40px;
+        bottom:13px;
+        left:40px;
+        position:absolute;
+        content:'';
+        background-color:$bgnd-black;
+        height:2px;
+        z-index:4;
+        @include animation('longLineDesktop 0.2s ease-in-out');
+        @include animation-mode(forwards);
+      }
+      input[type=text] {
+        width:100%;
+        right:0;
+        left:0;
+        position:fixed;
+        z-index:4;
+        top:13px;
+        pointer-events:inherit;
+        padding:14px 0 19px 50px;
+        @include transition(inherit);
+        margin:auto;
+        font-size:24px;
+        font-weight:400;
+      }
+      .search-clear {
+        position:absolute;
+        top:-28px;
+        right:-240px;
+        z-index:5;
+        width:44px;
+        height:44px;
+        display:flex;
+        opacity:0;
+        @include animation('fadeIn 0.4s ease-in-out');
+        @include animation-mode(forwards);
+        @include animation-delay(0.2s);
+      }
+      .icon-box-32 {
+        position:fixed;
+        z-index:4;
+        top:25px;
+        left:40px;
+        opacity:0;
+        @include animation('fadeIn 0.4s ease-in-out');
+        @include animation-mode(forwards);
+        @include animation-delay(0.2s);
+      }
+    }
+  }
+  @include breakpoint(mobile) {
+    padding:0;
+    min-height:48px;
+    background-color:$bgnd-black;
+    position:fixed;
+    top:0;
+    @include transition(top 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    &:before {
+      content:'';
+      position:fixed;
+      top:88px;
+      right:0;
+      bottom:100%;
+      left:0;
+      background-color:$bgnd-black;
+      z-index:2;
+      @include transition(bottom 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    }
+    &.open {
+      &:before {
+        bottom:0;
+      }
+    }
+    &.header-move-up {
+      top:-65px;
+    }
+    .download-build {
+      display:none;
+    }
+    &.header-move-down {
+      position:fixed;
+      top:0;
+    }
+    &.full-screen-search {
+      .right-nav-outer {
+        .icon-box-32 {
+          position:relative;
+          pointer-events:inherit;
+          left:33px;
+          top:7px;
+        }
+      }
+      &:before {
+        background-color:$bgnd-black;
+      }
+      input[type=text] {
+        display:block;
+        font-size:18px;
+        color:$txt-white;
+        padding:9px 0 9px 60px;
+        z-index:6;
+        caret-color:$txt-white;
+      }
+      &:after {
+        bottom:-12px;
+        background-color:$bgnd-white;
+        z-index:7;
+      }
+      .search-clear {
+        position:fixed;
+        top:11px;
+        right:25px;
+        color:$txt-white;
+        z-index:10;
+      }
+    }
+    .right-nav-outer {
+      width:48px;
+      height:48px;
+      position:absolute;
+      top:0;
+      left:0;
+      .icon-search {
+        width:14px;
+        height:14px;
+        .circle {
+          border-color:white;
+          width:14px;
+          height:14px;
+        }
+        .line {
+          background-color:$bgnd-white;
+          height:4px;
+        }
+      }
+      .icon-box-32 {
+        left:6px;
+        top:-3px;
+      }
+    }
+    .brand-logo {
+      width:24px;
+      position:absolute;
+      left:0;
+      top:13px;
+      right:0;
+      margin:auto;
+      svg {
+        width:26px;
+        height:26px;
+        fill:#fff;
+      }
+    }
+    &.search-active {
+      .input-group {
+        position:fixed;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-color:$bgnd-white;
+        padding:16px 25px 20px 25px;
+        @include animation('fadeIn  0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+        @include animation-mode(forwards);
+        @include box-shadow(0px 3px 30px rgba($bgnd-black, 0.1));
+        z-index:5;
+        display:block;
+        .icon-search {
+          display:none;
+        }
+      }
+      .search-back {
+        display:block
+      }
+      .icon-close {
+        &:before, &:after {
+          border-width:1px;
+        }
+      }
+    }
+    .pipe {
+      display:none;
+    }
+    input[type=text] {
+      display:none;
+    }
+  }
+  @include breakpoint(iPhonePlus) {
+    &.full-screen-search {
+      &:after {
+        @include animation('longLineMobile 0.2s ease-in-out');
+        @include animation-mode(forwards);
+      }
+      .search-clear {
+        right:7px;
+      }
+      .right-nav-outer {
+        .icon-box-32 {
+          left:11px;
+        }
+      }
+      input[type=text] {
+        padding:9px 0 9px 33px;
+      }
+    }
+  }
+}

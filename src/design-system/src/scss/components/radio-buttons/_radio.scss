@@ -1,0 +1,36 @@
+
+.user-selection {
+  li {
+    list-style:none;
+  }
+}
+
+
+/*radio buttons */
+.radio-button {
+  label {
+    &:before {
+      width:20px;
+      height:20px;
+      border:solid #8ab44b 2px;
+      @include border-radius(100px);
+      left:0;
+    }
+    &:after {
+      width:12px;
+      height:12px;
+      left:4px;
+      top:4px;
+      @include border-radius(100px);
+    }
+  }
+  input[type='radio'] {
+    &:checked ~ {
+      label {
+        &:after {
+          background-color:#8ab44b;
+        }
+      }
+    }
+  }
+}

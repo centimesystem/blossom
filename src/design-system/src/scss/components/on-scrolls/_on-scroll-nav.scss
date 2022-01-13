@@ -1,0 +1,25 @@
+.on-scroll-nav {
+  left:0;
+  top:40px;
+  right:0;
+  padding:10px 25px;
+  background-color:blue;
+  z-index:2;
+  .dropdown {
+    top:-9px;
+    right:-8px;
+    .menu-outer {
+      top:12px;
+      right:1px;
+    }
+  }
+  .dots {
+    right:0;
+  }
+  a:hover {
+    color:red;
+  }
+  &.scroll-nav-active {
+    top:89px;
+  }
+}

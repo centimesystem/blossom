@@ -1,0 +1,58 @@
+//variables,mixins and helpers
+@import '../helpers/variables';
+@import '../helpers/mixins';
+@import '../helpers/all-helpers';
+
+
+
+//import components whichever you need
+
+//tabs
+@import '../components/tabs/default-tabs';
+
+//grid
+@import '../components/grid/grid';
+@import '../components/grid/gutters';
+@import '../components/grid/align-items';
+
+//sidebar
+@import '../components/sidebar/sidebar';
+
+//page navigation header
+@import '../components/headers/header';
+
+//forms
+@import '../components/forms/forms';
+
+//ratings
+@import '../components/ratings/ratings';
+
+//buttons
+@import '../components/buttons/buttons-base';
+
+//on scroll navigations
+@import '../components/on-scrolls/on-scroll-nav';
+
+//dropdowns
+@import '../components/dropdowns/dropdown';
+
+//menu/more icons
+@import '../components/menu/dots';
+@import '../components/menu/menu-icon';
+
+//content placeholders
+@import '../components/placeholders/content-placeholder';
+
+//sidebar sticky
+@import '../components/sidebar/sidebar-sticky';
+
+
+
+
+
+
+
+
+span {
+  color:sathish;
+}

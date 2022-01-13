@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  min-width: 320px;
+  font-size: 14px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: #000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html, body, input, button {
+  font-family: "proxima-nova", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+section, picture, footer, header, article, figcaption, aside, figure, hgroup, nav, main {
+  display: block;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+a, button, input, select {
+  outline: 0;
+  border: none;
+  box-shadow: none;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+input:focus {
+  outline: 0;
+}
+
+img {
+  border: none;
+  outline: 0;
+}
+
+span, i {
+  display: inline-block;
+}
+
+@media (max-width: 1150px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}

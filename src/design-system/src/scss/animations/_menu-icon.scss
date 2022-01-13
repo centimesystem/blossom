@@ -1,0 +1,39 @@
+// hamburgerBar1
+@include keyframes(hamburgerBar1) {
+  0% {
+    left:0;
+   }
+  100% {
+    left:20px;
+  }
+}
+
+// hamburgerBar2
+@include keyframes(hamburgerBar2) {
+  0% {
+    right:0;
+   }
+  100% {
+    right:20px;
+  }
+}
+
+// hamburgerBar1 Default
+@include keyframes(hamburgerBar1Default) {
+  0% {
+    left:20px;
+   }
+  100% {
+    left:0;
+  }
+}
+
+// hamburgerBar2 Default
+@include keyframes(hamburgerBar2Default) {
+  0% {
+    right:20px;
+   }
+  100% {
+    right:0;
+  }
+}

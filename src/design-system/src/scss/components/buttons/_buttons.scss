@@ -1,0 +1,58 @@
+//button for all
+.button {
+  font-size:14px;
+  @include border-radius(2px);
+}
+
+//padding for buttons
+.btn-solid, .btn-outline  {
+  padding:8px 20px;
+}
+
+//tiny button
+.btn-tiny {
+  padding:5px 10px;
+  font-size:12px;
+  background-color:rgba($bgnd-white, 0.6);
+  color:rgba($txt-black, 0.6);
+  &:hover {
+    background-color:rgba(188, 196, 216, 0.2);
+    color:rgba($txt-black, 1);
+  }
+}
+
+//solid button
+.btn-solid  {
+  background-color:$orange-yellow;
+  border:solid 1px transparent;
+
+}
+
+@include breakpoint(when-desktop-lg) {
+  .btn-solid  {
+    &.hover-invert {
+      &:hover {
+        background-color:$bgnd-white;
+        border:solid 1px red;
+        color:inherit;
+      }
+    }
+    &:hover {
+      background-color:$orange-yellow-hover;
+      -webkit-box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+      -moz-box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+      box-shadow:0 12px 20px -5px rgba($shadow-light, 0.1), 0 12px 24px -10px rgba($shadow-light, 0.2);
+    }
+  }
+}
+
+
+.icon-preview {
+  width:34px;
+  height:34px;
+  margin-left:10px;
+  @include border-radius(2px);
+  img {
+    width:18px;
+  }
+}

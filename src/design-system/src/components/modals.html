@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop</title>
+	<script src="src/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+	<button class="popup1">Desktop Modal Appear by Width</button>
+	<button class="popup2">Desktop Modal Appear by Height</button>
+	<button class="popup3">Desktop and Mobile Default Modal</button>
+	<button class="popup8">Desktop and Mobile Default Modal Full width and Height</button>
+	<button class="popup6">Desktop Modal Appear by Full Height</button>
+	<button class="popup7">Desktop Modal Appear by Full Width</button>
+	<button class="popup4">Mobile Modal Appear by Full Height</button>
+	<button class="popup5">Mobile Modal Appear by Full Width</button>
+	<div>
+<input type="text" placeholder="search components here" />
+</div>
+	<style>
+	*{margin:0px;padding:0px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+	.pstn-fxd {
+		position:fixed
+	}
+	.edge {
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+	}
+	.pstn-reltv {
+		position:relative;
+	}
+	.pstn-abslt {
+		position:absolute
+	}
+	.modal {
+		display:none;
+	}
+	.modal.open {
+		display:block;
+	}
+	.bgnd-white {
+		background-color:#fff;
+	}
+	 .overlay {
+		background:rgb(63, 68, 82);
+		opacity:0;
+		animation:fade-in 0.2s ease-in-out;
+		animation-fill-mode:forwards;
+	 }
+	 .modal-inner {
+		z-index:2;
+		max-width:380px;
+		margin:0 auto;
+		height:100%;
+		display:flex;
+	 }
+	 .m-a-mode {
+		display:flex;
+		right:0;
+		left:0;
+		    align-self: center;
+	 }
+	 .modal-gutters {
+		padding:20px;
+	 }
+
+	 .desktop-full.open, .desktop-full-height.open, .desktop-default-full.open {
+		padding:10px;
+	 }
+	 .desktop-full .modal-inner, .desktop-full-height .modal-inner {
+		max-width:100%;
+	 }
+	 .desktop-full-height .m-a-mode {
+		top:0;
+		bottom:0;
+		animation:desktop-full-height 0.5s ease-in-out;
+		animation-fill-mode: forwards;
+	 }
+	 .desktop-default-full .m-a-mode {
+		top:0;
+		bottom:0;
+	 }
+	 .desktop-default-full .modal-inner {
+		max-width:100%;
+	 }
+
+	 .desktop-full .m-a-mode {
+		top:0;
+		bottom:0;
+		}
+
+
+
+
+	 .m-a-w .m-a-mode {
+		animation:modal-width 0.5s ease-in-out;
+		animation-fill-mode:forwards;
+	 }
+	 .m-a-w .modal-reveal, .m-a-f .modal-reveal {
+		padding:20px 0;
+	 }
+	 .m-a-f .m-a-mode {
+		animation:fade-in 0.5s ease-in-out;
+		animation-fill-mode:forwards;
+	 }
+
+	 .m-a-h .modal-reveal {
+		animation:modal-height 0.5s ease-in-out;
+		animation-fill-mode:forwards;
+	 }
+	 .desktop-full-height .modal-reveal {
+		animation:initial;
+	 }
+	 .modal-reveal {
+		width:100%;
+		box-shadow:0px 4px 40px rgba(0,0,0,0.1);
+		border-radius:2px;
+	 }
+	 .form-wrapper {
+		padding-top:40px;
+	 }
+	 .input-type-line input {
+		border:none;
+		width:100%;
+		background-color:transparent;
+		padding-bottom:6px;
+	 }
+	 .input-group {
+		border-bottom:solid #d8d8d8  1px;
+		margin-bottom:28px;
+	 }
+	 .modal-footer {
+		padding:50px 0 40px 0
+	 }
+	 .input-group.input-active label {
+		bottom:24px;
+		font-size:11px;
+		opacity:0.6;
+	 }
+	 .input-group label {
+		bottom:6px;
+		left:0;
+	 }
+	 .txt-center {
+		text-align:center;
+	 }
+	 @-webkit-keyframes modal-width {
+		0% {
+			opacity:0;
+			left:20px;
+			right:20px;
+		}
+		100% {
+			opacity:1;
+			left:0;
+			right:0;
+		}
+	 }
+
+	 @-webkit-keyframes modal-width-full {
+		0% {
+			opacity:0;
+			left:30px;
+			right:30px;
+		}
+		100% {
+			opacity:1;
+			left:0;
+			right:0;
+		}
+	 }
+	 @-webkit-keyframes modal-height {
+		0% {
+			opacity:0;
+			padding:0;
+		}
+		100% {
+			opacity:1;
+			padding:20px 0;
+		}
+	 }
+
+	 @-webkit-keyframes fade-in {
+		0% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	 }
+
+	 @-webkit-keyframes modal-height-mobile {
+		0% {
+			opacity:0;
+			height:90%;
+		}
+		100% {
+			opacity:1;
+			height:100%;
+		}
+	 }
+
+	 @-webkit-keyframes modal-height-mobile-full {
+		0% {
+			opacity:0;
+			height:80%;
+		}
+		100% {
+			opacity:1;
+			height:100%;
+		}
+	 }
+
+	 @-webkit-keyframes desktop-full-height {
+		0% {
+			opacity:0;
+			top:20px;
+			bottom:20px;
+		}
+		100% {
+			opacity:1;
+			top:0;
+			bottom:0;
+		}
+	 }
+
+	.close-btn {
+		top:10px;
+		right:10px;
+	}
+
+	.desktop-full-height.mobile, .desktop-full.mobile {
+			padding:0;
+		 }
+	 .mobile .modal-reveal {
+		border-radius:initial;
+	 }
+
+	@media(max-width:767px) {
+		.modal-reveal {
+			overflow-x:scroll;
+		}
+		.m-a-mode {
+			padding:0 10px;
+			top:10px;
+			bottom:10px;
+		}
+		 .m-a-h .m-a-mode {
+			top:0;
+		bottom:0;
+		animation:desktop-full-height 0.5s ease-in-out;
+		animation-fill-mode: forwards;
+		padding:10px;
+		 }
+		 .m-a-w.desktop-full .m-a-mode {
+			padding:0;
+		 }
+		 .m-a-h .modal-reveal {
+			animation:none;
+		 }
+		 .desktop-default-full.open {
+			padding:10px 0;
+		 }
+		 .desktop-full-height.m-a-h .m-a-mode {
+			padding:0;
+		 }
+
+	}
+	@media(max-width:500px) {
+		/*
+		.modal-inner {
+			max-width:initial;
+		 }
+		 .modal-mobile .m-a-mode {
+			padding:0;
+			top:0;
+			bottom:0;
+		 }
+		 .modal-mobile .modal-reveal {
+			border-radius:initial;
+		 }
+		 */
+
+
+
+		 /*.desktop-full.open, .desktop-full-height.open, .desktop-default-full.open {
+
+		 }*/
+
+	}
+	/*
+	@media(max-width:600px) {
+		.modal-inner {
+			max-width:320px;
+			width:100%;
+		}
+		.m-a-h .modal-reveal {
+			animation:initial;
+		}
+		 .m-a-mode {
+			height:100%;
+			animation:modal-height-mobile 0.5s ease-in-out;
+			animation-fill-mode:forwards;
+		}
+		.modal-reveal {
+			overflow-x:scroll;
+		}
+		.modal-mobile .m-a-mode {
+			height:100%;
+			animation:modal-height-mobile-full 0.5s ease-in-out;
+			animation-fill-mode: forwards;
+		}
+		.modal-mobile .modal-inner {
+			width:100%;
+			max-width:100%;
+		}
+		.modal-mobile .modal-reveal {
+			border-radius:0px;
+		}
+		.m-a-w .m-a-mode {
+		animation:modal-width-full 0.5s ease-in-out;
+		animation-fill-mode:forwards;
+	 }
+	 .desktop-full .modal-inner {
+		width:100%;
+		margin:0;
+	 }
+
+	 .modal {
+		padding:10px;
+	 }
+	 .modal.modal-mobile {
+		padding:0;
+	 }
+	 .m-a-w.desktop-full .m-a-mode {
+		top:0;
+		bottom:0;
+	 }
+	 .desktop-full.m-a-h .m-a-mode {
+		height: 100%;
+    animation: modal-height-mobile 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+	top:0;
+	bottom:0;
+	 }
+	 .m-a-w.desktop-full .m-a-mode{
+		height:100%;
+	 }
+	}
+
+	*/
+	</style>
+
+
+	<div class="modal edge pstn-fxd m-a-h" id="modalWidth">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+
+	<div class="modal edge pstn-fxd m-a-h desktop-full-height" id="modalHeightDesktop">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+
+
+	<div class="modal edge pstn-fxd m-a-h desktop-full-height mobile" id="MobileModalHeightDesktop">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+	<div class="modal edge pstn-fxd m-a-w desktop-full" id="modalWidthDesktop">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+
+	<div class="modal edge pstn-fxd m-a-w desktop-full mobile" id="MobileModalWidthDesktop">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+
+
+
+
+
+
+	<div class="modal edge pstn-fxd m-a-w" id="modalHeight">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+	<div class="modal edge pstn-fxd m-a-f" id="modalDefault">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+	<div class="modal edge pstn-fxd m-a-f desktop-default-full" id="modalDefaultFull">
+		<div class="modal-inner pstn-reltv">
+			<div class="m-a-mode pstn-abslt">
+				<div class="bgnd-white modal-reveal">
+					<span class="close-btn pstn-abslt">close</span>
+					<div class="visuals" style="height:100px;">
+
+					</div>
+					<div class="modal-header txt-center">
+						<h3>Create New User</h3>
+					</div>
+					<div class="modal-content modal-gutters">
+						<div class="form-wrapper input-type-line">
+							<form>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User name</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User email</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+								<div class="input-group pstn-reltv">
+									<label class="pstn-abslt">User type</label>
+									<input type="text" class="pstn-reltv" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer txt-center">
+						<button>Create</button>
+						<button>Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pstn-fxd edge overlay"></div>
+	</div>
+
+
+<script>
+	 jQuery(function(){
+		jQuery('.popup1').click(function(){
+			jQuery('#modalHeight').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup2').click(function(){
+			jQuery('#modalWidth').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup3').click(function(){
+			jQuery('#modalDefault').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup4').click(function(){
+			jQuery('#MobileModalHeightDesktop').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup5').click(function(){
+			jQuery('#MobileModalWidthDesktop').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup6').click(function(){
+			jQuery('#modalHeightDesktop').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup7').click(function(){
+			jQuery('#modalWidthDesktop').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+	 jQuery(function(){
+		jQuery('.popup8').click(function(){
+			jQuery('#modalDefaultFull').addClass('open');
+		})
+		jQuery('.close-btn').click(function(){
+			jQuery('.modal').removeClass('open');
+		})
+	 });
+
+
+	jQuery(".form-wrapper input").focus(function(){
+		jQuery(this).closest(".input-group").addClass("input-active");
+	});
+	jQuery(".form-wrapper input").blur(function(){
+		if(jQuery(this).val() == ""){
+			jQuery(this).closest(".input-group").removeClass("input-active anim-line-active");
+		}else{
+			jQuery(this).closest(".input-group").addClass("anim-line-active");
+		}
+	});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.transitions-to-dom,
+.transitions-to-dom span,
+.transitions-to-dom a,
+.transitions-to-dom p,
+.transitions-to-dom div,
+.transitions-to-dom img,
+.transitions-to-dom h1,
+.transitions-to-dom h2,
+.transitions-to-dom h3,
+.transitions-to-dom h4,
+.transitions-to-dom h5,
+.transitions-to-dom h6,
+.transitions-to-dom strong {
+  @include transition(all 0.3s cubic-bezier(0.61, 0.03, 0.43, 0.85))
+}

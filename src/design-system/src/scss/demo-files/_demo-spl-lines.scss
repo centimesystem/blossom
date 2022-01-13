@@ -1,0 +1,18 @@
+.spl-line {
+  left:270px;
+}
+@include breakpoint(iPad-landscape) {
+  .spl-line {
+    right:40px;
+    left:40px;
+  }
+}
+@include breakpoint(mobile) {
+  .extra-line-h {
+    left:20px;
+    right:20px;
+  }
+  .spl-line {
+    display:none;
+  }
+}

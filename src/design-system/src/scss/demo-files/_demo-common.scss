@@ -1,0 +1,211 @@
+.searh-match {
+  background-color:rgba(red, 0.07);
+  color:#5164ff;
+}
+.slash {
+  font-size:12px;
+  opacity:0.6;
+}
+.main-wrapper {
+  margin:90px 230px 0 300px;
+  z-index:1;
+  &.hide-sticky-nav {
+    margin-right:0;
+    .sidebar-sticky {
+      right:-230px;
+    }
+  }
+  .right-buttons {
+    top:-24px;
+  }
+  .square-toggle {
+    margin-left:10px;
+  }
+  .components {
+    padding-top:50px;
+    p {
+      max-width:80%;
+    }
+  }
+  .inner-wrapper {
+    padding:24px 40px 70px 40px;
+  }
+  .titles-outer {
+    padding-bottom:14px;
+  }
+  @include breakpoint(default-desktop) {
+    margin:90px 0 0 300px;
+    .inner-wrapper {
+      padding:24px 40px 70px 20px;
+    }
+    .sidebar-sticky {
+      right:-230px;
+    }
+    &.hide-sticky-nav {
+      margin-right:230px;
+      .sidebar-sticky {
+        right:0;
+      }
+    }
+    .square-toggle {
+      &:before {
+        right:19px;
+      }
+      &.active {
+        &:before {
+          right:6px;
+        }
+      }
+    }
+  }
+  @include breakpoint(iPad-landscape) {
+    margin-left:0;
+    .inner-wrapper {
+      padding:30px 40px 70px 40px;
+    }
+    .titles-outer {
+      padding-bottom:10px;
+    }
+    .spl-line {
+      right:40px;
+      left:40px;
+    }
+    .download-build {
+      margin-right:40px;
+    }
+    .page-title {
+      margin-right:15px;
+      opacity:0.7;
+    }
+  }
+  @include breakpoint(iPad-portrait) {
+    .component-title {
+      padding-bottom:25px;
+      h4 {
+        font-size:20px;
+      }
+    }
+    .btn-components {
+      top:-8px;
+      a, .button:hover {
+          padding:6px 20px;
+      }
+    }
+    .right-buttons {
+      top:-35px;
+    }
+    .sidebar-sticky {
+      min-width:180px;
+    }
+    &.hide-sticky-nav {
+      margin-right:180px;
+    }
+  }
+  @include breakpoint(mobile) {
+    margin:114px 0 0 0;
+    .component-name, .icon-wrapper {
+      @include animation('pageTilesShow 0.8s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      @include animation-mode(forwards);
+      @include animation-delay(0.2s);
+      opacity:0;
+    }
+    .buttons-wrapper {
+      .btn-solid {
+        padding:6px 0 0 0;
+        width:40px;
+        height:28px;
+        position:absolute;
+        top:-6px;
+        right:12px;
+        &.button {
+          font-size:12px;
+        }
+        &.rotate {
+          width:150px;
+          white-space:nowrap;
+        }
+      }
+    }
+    &.fadeOut {
+      .component-name, .icon-wrapper {
+        @include animation('pageTilesHide 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+        @include animation-mode(forwards);
+      }
+      .square-toggle {
+        @include animation('toggleHide 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+        @include animation-mode(forwards);
+      }
+    }
+    .icon-wrapper {
+      width:40px;
+      height:40px;
+      position:absolute;
+      top:0;
+      right:4px;
+      text-align:center;
+      margin-top:0;
+    }
+    .right-buttons {
+      top:0;
+    }
+    .square-toggle {
+      position:absolute;
+      top:-43px;
+      right:14px;
+      width:26px;
+      height:18px;
+      @include animation('toggleShow 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      @include animation-mode(forwards);
+      @include border-radius(2px);
+      &:hover {
+        background-color:$bgnd-white;
+      }
+      &:before {
+        top:3px;
+        right:17px;
+        bottom:3px;
+        width:6px;
+      }
+      &.active {
+        &:before {
+          right:4px;
+        }
+      }
+    }
+    .titles-outer {
+      position:fixed;
+      top:48px;
+      right:0;
+      left:0;
+      background-color:$bgnd-black;
+      z-index:2;
+      padding:10px 16px 12px 16px;
+      @include transition(all 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+      .page-title {
+        display:none;
+      }
+      &.fixed {
+        top:0;
+        position:fixed;
+        padding:13px 16px 15px 16px;
+        .dots {
+          top:5px;
+        }
+        .icon-wrapper {
+          top:3px;
+        }
+      }
+      h4 {
+        font-weight:400;
+        font-size:15px;
+        color:$txt-white;
+      }
+    }
+    .inner-wrapper {
+      padding:0;
+      > hr {
+        display:none;
+      }
+    }
+  }
+}

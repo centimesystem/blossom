@@ -1,0 +1,45 @@
+// gutter for each column
+.gutters {
+
+  //columns
+  > [class*=col],
+  > [class*=col-],
+  > [class*=col-lg],
+  > [class*=col-md],
+  > [class*=col-sm],
+  > [class*=col-xl],
+  > [clas*=col-fx] {
+    padding-right:$gutter-desktop;
+    padding-left:$gutter-desktop;
+  }
+
+  //rows
+  &.row {
+    margin-left:-$gutter-desktop;
+    margin-right:-$gutter-desktop;
+  }
+
+  //for mobiles
+  @media(max-width:767px) {
+    > [class*=col],
+    > [class*=col-],
+    > [class*=col-lg],
+    > [class*=col-md],
+    > [class*=col-sm],
+    > [class*=col-xl],
+    > [class*=col-fx] {
+      padding-right:$gutter-mobile;
+      padding-left:$gutter-mobile;
+    }
+  }
+}
+
+// no gutters
+.no-gutters {
+  margin-right:0;
+  margin-left:0;
+  > .col, [class*=col-] {
+    padding-right:0;
+    padding-left:0;
+  }
+}

@@ -1,0 +1,30 @@
+
+// Icon icon box
+@include keyframes(rotation) {
+  0% {
+    transform:rotate(-45deg);
+   }
+  100% {
+    transform:rotate(45deg);
+  }
+}
+
+// close icon bar 1
+@include keyframes(closeBar1) {
+  0% {
+    right:30px;
+   }
+  100% {
+    right:0;
+  }
+}
+
+// close icon bar 2
+@include keyframes(closeBar2) {
+  0% {
+    left:30px;
+   }
+  100% {
+    left:0;
+  }
+}

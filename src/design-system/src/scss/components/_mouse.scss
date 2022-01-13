@@ -1,0 +1,32 @@
+.scroll-down {
+  bottom:90px;
+  left:5%;
+}
+.mouse {
+  width:4px;
+  height:60px;
+  opacity:0.1;
+  border-radius:100px;
+}
+.mouse-wheel {
+  width:4px;
+  height:12px;
+  border-radius:100px;
+  left:0;
+  bottom:0;
+  -webkit-animation: wheel 1s infinite  alternate;
+  animation: wheel 1s infinite  alternate;
+}
+
+@-webkit-keyframes wheel {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+@-moz-keyframes wheel {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+@keyframes wheel {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}

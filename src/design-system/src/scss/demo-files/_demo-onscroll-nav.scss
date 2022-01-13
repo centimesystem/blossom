@@ -1,0 +1,29 @@
+.on-scroll-nav  {
+  left:300px;
+  padding:12px 40px 12px 70px;
+  .pipe {
+    margin-left:38px;
+  }
+  .dropdown {
+    &.open {
+      .dots {
+        span {
+          background-color:red;
+        }
+      }
+    }
+    .max-height {
+      margin:30px 0 20px 0;
+    }
+  }
+  @include breakpoint(iPad-landscape) {
+    left:0;
+    padding:14px 40px 14px 40px;
+    &.scroll-nav-active {
+      top:90px;
+    }
+  }
+  @include breakpoint(mobile) {
+    display:none;
+  }
+}

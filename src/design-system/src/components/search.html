@@ -1,0 +1,96 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <title>InstantSearch Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/algoliasearch/3.22.1/algoliasearch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/places.js/1/placesAutocompleteDataset.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch-theme-algolia.min.css">
+
+  <!-- Always use `2.x` versions in production rather than `2` to mitigate any side effects on your website,
+  Find the latest version on InstantSearch.js website: https://community.algolia.com/instantsearch.js/v2/guides/usage.html -->
+
+</head>
+<body>
+  <!-- HTML Markup -->
+<div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="autocomplete-dataset" class="form-control" placeholder="Search for vacation rentals or cities" />
+</div>
+
+
+  <script>
+
+  (function() {
+   var client = algoliasearch('38ZIS47H9R', 'b1de44b0cd64b6407f27cd236313afb7');
+   var index = client.initIndex('components');
+
+   //var client = algoliasearch('38ZIS47H9R', 'b1de44b0cd64b6407f27cd236313afb7');
+   //var index = client.initIndex('components');
+
+   // create the first autocomplete.js dataset: vacation rentals
+   var rentalsDataset = {
+     source: autocomplete.sources.hits(index, {hitsPerPage: 2}),
+     displayKey: 'name',
+     name: 'rentals',
+     templates: {
+       header: '<div class="ad-example-header">Vacation rentals</div>',
+       suggestion: function(suggestion) {
+         return '<div class="ad-example-suggestion">' +
+           '<img src="' + suggestion.thumbnail_url + '" />' +
+           '<div>' +
+             suggestion._highlightResult.name.value + '<br />' +
+             '<small>' + suggestion._highlightResult.city.value + '</small>' +
+           '</div>' +
+           '</div>';
+       }
+     }
+   };
+
+   // create the second dataset: places
+   // we automatically inject the default CSS
+   // all the places.js options are available
+   var placesDataset = placesAutocompleteDataset({
+     algoliasearch: algoliasearch,
+     templates: {
+       header: '<div class="ad-example-header">Cities</div>'
+     },
+     hitsPerPage: 3
+   });
+
+   // init
+   var autocompleteInstance = autocomplete(document.querySelector('#autocomplete-dataset'), {
+     hint: false,
+     debug: true,
+     cssClasses: {prefix: 'ad-example'}
+   }, [
+     rentalsDataset,
+     placesDataset
+   ]);
+
+   var autocompleteChangeEvents = ['selected', 'autocompleted'];
+
+   autocompleteChangeEvents.forEach(function(eventName) {
+     autocompleteInstance.on('autocomplete:'+ eventName, function(event, suggestion, datasetName) {
+       console.log([datasetName, suggestion]);
+     });
+   });
+ })();
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+</body>

@@ -1,0 +1,27 @@
+//square toggle
+.square-toggle {
+  width:34px;
+  height:34px;
+  background-color:#ebeef1;
+  @include border-radius(3px);
+  z-index:2;
+  &:before {
+    content:'';
+    position:absolute;
+    top:7px;
+    right:6px;
+    bottom:7px;
+    background-color:$bgnd-black;
+    width:8px;
+    @include transition(all 0.3s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    @include border-radius(1px);
+  }
+  &.active {
+    &:before {
+      right:19px;
+    }
+  }
+  &:hover {
+    background-color:rgba($bgnd-black, 0.1);
+  }
+}

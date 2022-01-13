@@ -1,0 +1,31 @@
+.ratings {
+  .txt-small {
+    padding-left:10px;
+  }
+}
+.half-circle, .full-circle, .empty-circle {
+  border-radius:100px;
+  width:16px;
+  height:16px;
+  border:solid 2px red;
+  margin:0.5px;
+  float:left;
+}
+.half-circle:before, .full-circle:before {
+  position:relative;
+  display:block;
+  content:'';
+  height:8px;
+  background-color:red;
+  border-top-left-radius:100px;
+  border-bottom-left-radius:100px;
+  top:2px;
+  left:2px;
+}
+.half-circle:before {
+  width:4px;
+}
+.full-circle:before {
+  width:8px;
+  border-radius:100px;
+}

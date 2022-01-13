@@ -1,0 +1,62 @@
+.tabs {
+  span {
+    margin-left:18px;
+    font-size:15px;
+    cursor:pointer;
+    opacity:0.6;
+    &:hover {
+      opacity:1;
+    }
+    &:after {
+      display: block;
+      content: attr(title);
+      font-weight:600;
+      height:0;
+      overflow:hidden;
+      visibility:hidden;
+    }
+  }
+  span:first-child {
+    margin-left:0;
+  }
+  .active-tab {
+    pointer-events:none;
+    opacity:1;
+    font-weight:600;
+    &:before {
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      height:2px;
+      display:block;
+      background-color:$orange-yellow;
+      @include animation('elastic 0.7s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      @include animation-mode(forwards);
+    }
+  }
+}
+
+//Slideup tabs content
+.content-slideup {
+  .tabs-content {
+    opacity:0;
+    top:20px;
+    @include transition(all 0.4s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    @include animation('slideUp 0.4s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+  }
+  .content-open {
+    opacity:1;
+    top:0;
+  }
+}
+
+// Fadein tabs content
+.content-fadein {
+  .tabs-content {
+    opacity:0;
+    @include transition(0.4s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+  }
+  .content-open {
+    opacity:1;
+  }
+}

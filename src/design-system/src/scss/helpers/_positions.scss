@@ -1,0 +1,23 @@
+.pstn-reltv,
+.group-pstn-reltv div,
+.group-pstn-reltv ul li,
+.group-pstn-reltv a {
+  position:relative
+}
+
+.pstn-abslt {
+  position:absolute;
+}
+.pstn-fxd {
+  position:fixed;
+}
+.pstn-sticky {
+  position:sticky;
+  position:-webkit-sticky;
+}
+.edge {
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}

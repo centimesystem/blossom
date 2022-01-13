@@ -1,0 +1,59 @@
+.on-scroll-sticky {
+  top:-60px;
+  left:0;
+  right:0;
+  transition: 0.7s cubic-bezier(0.61, 0.03, 0.43, 0.85);
+  color:$txt-white;
+  z-index:1;
+  .sticky-inner {
+    padding:12px;
+    top:-20px;
+    opacity:0;
+    white-space:nowrap;
+
+    transition: 1s cubic-bezier(0.61, 0.03, 0.43, 0.85);
+    > span {
+      margin:0 20px;
+    }
+  }
+  &.sticky-in {
+    top:60px;
+    .sticky-inner {
+      top:0;
+      opacity:1;
+    }
+  }
+  @include breakpoint(mobile) {
+    overflow-y:scroll;
+    &.sticky-in {
+      top:50px;
+    }
+  }
+}
+
+
+
+@-webkit-keyframes sticky-animation {
+  0% {
+    top:0;
+   }
+  100% {
+    top:60px;
+  }
+}
+@-webkit-keyframes sticky-out {
+  0% {
+    top:60px;
+   }
+  100% {
+    top:11px;
+  }
+}
+@-webkit-keyframes sticky-in {
+  0% {
+    top:60px;
+   }
+  100% {
+    top:11px;
+  }
+}

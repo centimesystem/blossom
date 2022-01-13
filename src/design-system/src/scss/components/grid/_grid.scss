@@ -1,0 +1,121 @@
+
+/* flex grow */
+.flex-1,
+.flex-2,
+.flex-3,
+.flex-4,
+.flex-5,
+.flex-6,
+.flex-7,
+.flex-8,
+.flex-9,
+.flex-10,
+.flex-11,
+.flex-12 {
+  -ms-flex-preferred-size:0;
+  flex-basis:0;
+}
+.flex-1 {
+  -ms-flex-positive:1;
+  flex-grow:1;
+}
+.flex-2 {
+  -ms-flex-positive:2;
+  flex-grow:2;
+}
+.flex-3 {
+  -ms-flex-positive:3;
+  flex-grow:3;
+}
+.flex-4 {
+  -ms-flex-positive:4;
+  flex-grow:4;
+}
+.flex-5 {
+  -ms-flex-positive:5;
+  flex-grow:5;
+}
+.flex-6 {
+  -ms-flex-positive:6;
+  flex-grow:6;
+}
+.flex-7 {
+  -ms-flex-positive:7;
+  flex-grow:7;
+}
+.flex-8 {
+  -ms-flex-positive:8;
+  flex-grow:8;
+}
+.flex-9 {
+  -ms-flex-positive:9;
+  flex-grow:9;
+}
+.flex-10 {
+  -ms-flex-positive:10;
+  flex-grow:10;
+}
+.flex-11 {
+  -ms-flex-positive:11;
+  flex-grow:11;
+}
+.flex-12 {
+  -ms-flex-positive:12;
+  flex-grow:12;
+}
+
+
+
+
+
+
+
+
+
+//auto columns
+.col {
+  -ms-flex-preferred-size:0;
+  -ms-flex-positive:1;
+  flex-grow:1;
+  flex-basis:0;
+}
+
+//webkit flex 0
+[class*=col] {
+  -webkit-box-flex:0;
+}
+
+//auto column with content
+.col-auto {
+  -ms-flex:0 0 auto;
+  flex:0 0 auto;
+  width:auto;
+  max-width:none;
+}
+
+//grid template
+.grid-template {
+  display:grid;
+  grid-template:5;
+}
+
+//add cols 1 - 12
+@include col(1, 12);
+
+//add offsets 1 - 12
+@include offset(1, 12);
+
+//above 991 resolution
+@include breakpoint(when-iPad-portrait) {
+	@include col-lg(grid, 12);
+}
+
+//above 767 resolution
+@include breakpoint(mobile) {
+	@include col-sm(grid, 12);
+}
+
+//above 767 resolution
+@include breakpoint(when-desktop) {
+	@include col-md(grid, 12);
+}

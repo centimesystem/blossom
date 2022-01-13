@@ -1,0 +1,10 @@
+/*check boxes */
+.check-box {
+  &.rounded {
+    span {
+      &:after {
+        @include border-radius(100px);
+      }
+    }
+  }
+}

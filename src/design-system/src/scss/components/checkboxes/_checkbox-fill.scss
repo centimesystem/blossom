@@ -1,0 +1,27 @@
+/*check boxes */
+.check-box {
+  &.fill {
+    span {
+      &:after {
+        background-color:rgba($bgnd-dark, 0.2);
+      }
+    }
+    input[type='checkbox'] {
+      &:checked ~ {
+        span {
+          opacity:1;
+          &:after {
+            background-color:$bgnd-dark;
+          }
+        }
+      }
+    }
+    &:hover {
+      span {
+        &:after {
+          background-color:rgba($bgnd-dark, 0.4);
+        }
+      }
+    }
+  }
+}

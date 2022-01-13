@@ -1,0 +1,29 @@
+
+//create base arrow, arrow color will be the same as font color
+.arrow {
+  border-bottom:solid;
+  border-left:solid;
+  border-width:1px;
+  width:7px;
+  height:7px;
+}
+
+//arrow direction up
+.arrow-up  {
+  @include transform(rotate(135deg));
+}
+
+//arrow direction down
+.arrow-down  {
+  @include transform(rotate(-45deg));
+}
+
+//arrow direction right
+.arrow-right  {
+  @include transform(rotate(-140deg));
+}
+
+//arrow direction left
+.arrow-left  {
+  @include transform(rotate(45deg));
+}

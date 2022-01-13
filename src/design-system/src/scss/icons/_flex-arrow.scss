@@ -1,0 +1,27 @@
+.flex-arrow {
+  width:18px;
+  height:18px;
+  &:before, &:after {
+    height:2px;
+    background-color:#58595b;
+    width:9px;
+    @include border-radius(100px);
+    top:7px;
+  }
+  &:before {
+    left:2px;
+    @include transform(rotate(45deg));
+  }
+  &:after {
+    right:2px;
+    @include transform(rotate(-45deg));
+  }
+  &.active {
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+    &:after {
+      @include transform(rotate(45deg));
+    }
+  }
+}

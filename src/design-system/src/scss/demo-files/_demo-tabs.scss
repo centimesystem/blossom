@@ -1,0 +1,49 @@
+.tabs-outer {
+  padding-bottom:12px;
+}
+.tabs {
+   @include breakpoint(iPad-portrait) {
+     &.p-t-10 {
+       padding-top:0;
+     }
+      span {
+        font-size:14px;
+      }
+   }
+}
+
+@include breakpoint(iPad-landscape) {
+  .tabs-outer {
+    padding-bottom:0;
+  }
+}
+
+@include breakpoint(mobile) {
+  .tabs-outer {
+    background-color:$bgnd-white;
+    padding:12px 0 7px 16px;
+    @include box-shadow(0 0 4px rgba($shadow-light, 0.2));
+    position:fixed;
+    top:88px;
+    left:0;
+    right:0;
+    z-index:2;
+    @include transition(top 0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85));
+    &.fixed {
+      top:45px;
+    }
+  }
+  .tabs {
+    span {
+      margin-left:20px;
+    }
+    .active-tab {
+      &:before {
+        bottom:-11px;
+      }
+    }
+  }
+  .tab-responsive {
+    display:none;
+  }
+}

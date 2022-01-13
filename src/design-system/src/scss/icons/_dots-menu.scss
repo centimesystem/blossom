@@ -1,0 +1,13 @@
+.dots-menu {
+  .inner {
+    background-color:red;
+  }
+  span {
+    width:4px;
+    height:4px;
+    @include transform(scale(0.9));
+    &:first-child {
+      left:-1px;
+    }
+  }
+}

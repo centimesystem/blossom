@@ -1,0 +1,12 @@
+a,
+button,
+.cursor-p:not(.group-active) {
+  cursor:pointer;
+}
+.cursor-none {
+  pointer-events:none;
+  cursor:not-allowed;
+}
+.cursor-not-allowed {
+  cursor:not-allowed;
+}

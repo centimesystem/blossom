@@ -1,0 +1,12 @@
+p {
+  margin:0;
+  font-size:15px;
+  line-height:24px;
+  opacity:0.8;
+}
+@media(max-width:767px) {
+  p {
+    font-size:14px;
+    line-height:24px;
+  }
+}

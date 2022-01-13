@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>edit</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-settings-copy" transform="translate(-1392.000000, -1036.000000)">
+            <g id="settings-layout-2" transform="translate(248.000000, 219.000000)">
+                <g id="edit" transform="translate(1144.000000, 817.000000)">
+                    <rect id="icon-bg" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="16" height="16"></rect>
+                    <g id="icon" fill="#008085">
+                        <path d="M1.716,11.2880654 L1.722,11.2820654 L11.806,1.22156545 L14.7845,4.19956545 L14.7845,4.22306545 L4.7175,14.2895654 L1.716,11.2880654 Z M15.6455,3.33856545 L12.667,0.360565449 C12.1835,-0.122934551 11.3995,-0.117434551 10.9215,0.360565449 L0,11.2820654 L0,16.0000654 L4.7175,16.0000654 L15.6395,5.07806545 C16.117,4.60056545 16.123,3.81606545 15.6455,3.33856545 L15.6455,3.33856545 Z" id="Fill-1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

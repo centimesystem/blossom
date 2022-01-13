@@ -1,0 +1,102 @@
+//for page theme
+@import '../helpers/variables';
+
+//optional - helpers
+@import '../mixins/breakpoints';
+@import '../mixins/placeholders';
+@import '../mixins/transitions';
+
+
+
+//remove extra padding/margin from body
+* {
+  margin:0;
+  padding:0;
+}
+
+//basic page settings
+body {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  min-width:320px;
+  font-size:14px;
+  -webkit-font-smoothing:subpixel-antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color:$txt-black;
+}
+
+//pseudo elements
+*,
+*::before,
+*::after {
+  box-sizing:border-box;
+}
+
+//adjust fonts
+html {
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+}
+
+//font family
+html, body, input, button {
+  font-family: $font-reg;
+}
+
+//optional - make page 100% height as default
+html,body {
+  height:100%;
+}
+
+//optional - make the latest selectors as block level elements
+section, picture, footer, header, article, figcaption, aside, figure,  hgroup, nav, main {
+  display:block;
+}
+
+//optional - make cell spacing as zero
+table {
+  border-spacing:0;
+  border-collapse:collapse;
+}
+
+//optional - remove border/outlines from buttons
+a,button,input,select {
+  outline:0;
+  border:none;
+  box-shadow:none;
+}
+
+//optional - remove "X" cross icon for ie browsers default.
+input[type=text]::-ms-clear {
+  display:none;
+}
+
+//optional - make outline/focus none when focus on input boxes
+input:focus {
+  outline:0;
+}
+
+//optional - remove border/outline for firefox
+img {
+  border:none;
+  outline:0;
+}
+
+//optional - make inline elements as inline-block level
+span,i {
+  display:inline-block;
+}
+
+//optional - give smooth scroll effect for touch devices like tablets/mobiles
+@media (max-width:1150px) {
+    body {
+      -webkit-overflow-scrolling:touch;
+    }
+}

@@ -1,0 +1,59 @@
+.b-type-dashed {
+  border:none;
+  border-top:dashed 1px;
+}
+.b-type-solid, hr {
+  border:none;
+  border-top:solid 1px;
+}
+.b-type-solid, .b-type-dashed, hr {
+  border-color: rgba($b-black, 0.1);
+}
+.spl-line {
+  border:none;
+  border-bottom:solid 1px rgba($b-default, 0.1);
+  bottom:0;
+  right:0;
+  left:0;
+}
+.extra-line-v {
+  top:-25px;
+  right:-1px;
+  height:25px;
+  border-right:solid 1px rgba($b-default, 0.3);
+  z-index:2;
+}
+
+
+
+
+
+//border types
+.border-solid {
+  border-style:solid;
+}
+.border-dashed {
+  border-style:dashed;
+}
+.border-dotted {
+  border-style:dotted;
+}
+.border-none {
+  border-style:none;
+}
+
+//border width
+.border-w-1 {
+  border-width:1px;
+}
+.border-transparent {
+  border:solid 1px transparent;
+}
+
+//border-color
+.border-black {
+  border-color:black;
+}
+.border-light {
+  border:solid 1px rgba($bgnd-dark, 0.4);
+}

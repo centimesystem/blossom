@@ -1,0 +1,8 @@
+.pseudo-abslt {
+  &:before, &:after {
+    content:'';
+    position:absolute;
+    transition:all 0.3s ease-in-out;
+    margin:auto;
+  }
+}

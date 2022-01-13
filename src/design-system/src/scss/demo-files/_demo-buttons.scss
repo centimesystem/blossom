@@ -1,0 +1,9 @@
+@include breakpoint(mobile) {
+  .btn-components {
+    display:none;
+  }
+}
+
+.button-wrapper {
+  margin:8px 0;
+}

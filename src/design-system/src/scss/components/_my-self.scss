@@ -1,0 +1,88 @@
+.my-self {
+  .lens {
+    width:700px;
+    height:700px;
+  }
+  .lens-b {
+    border:solid $border 1px;
+    @include border-radius(1000px);
+  }
+  .lens1 {
+    width:700px;
+    height:700px;
+  }
+  .lens2 {
+    width:694px;
+    height:694px;
+  }
+  .lens3 {
+    width:688px;
+    height:688px;
+  }
+  .lens4 {
+    width:682px;
+    height:682px;
+  }
+  .lens5 {
+    width:676px;
+    height:676px;
+  }
+  .lens6 {
+    width:670px;
+    height:670px;
+  }
+  .lens7 {
+    width:664px;
+    height:664px;
+  }
+  .lens8 {
+    width:658px;
+    height:658px;
+  }
+  .lens9 {
+    width:652px;
+    height:652px;
+  }
+  .lens10 {
+    width:646px;
+    height:646px;
+  }
+  .lens11 {
+    width:640px;
+    height:640px;
+  }
+  .lens12 {
+    width:634px;
+    height:634px;
+  }
+  .lens13 {
+    width:628px;
+    height:628px;
+  }
+  .lens14 {
+    width:622px;
+    height:622px;
+  }
+  .lens15 {
+    width:616px;
+    height:616px;
+  }
+  .lens16 {
+    width:610px;
+    height:610px;
+  }
+  .lens17 {
+    width:604px;
+    height:604px;
+  }
+  .lens18 {
+    width:500px;
+    height:500px;
+    background: rgba($bgnd-black, 0.05);
+    border:none;
+  }
+  .my-self-des {
+    width:900px;
+    padding-top:360px;
+  }
+}

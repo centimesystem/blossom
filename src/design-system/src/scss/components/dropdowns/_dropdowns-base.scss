@@ -1,0 +1,23 @@
+.menu-item {
+  padding:14px 18px;
+}
+.dropdown-menu {
+  .dots-menu {
+    width:24px;
+  }
+  &.open {
+    .menu-items {
+      display:block;
+    }
+  }
+  .hover {
+    &:hover {
+      background-color:rgba($bgnd-light, 1);
+      opacity:1;
+    }
+  }
+}
+.menus-button {
+  padding:14px 18px;
+  min-width:260px;
+}

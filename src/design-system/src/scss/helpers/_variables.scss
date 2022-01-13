@@ -1,0 +1,36 @@
+//grid gutter
+$gutter-desktop:        10px;
+$gutter-mobile:         10px;
+
+//body font family
+$font-reg:              'proxima-nova', sans-serif;
+
+//text colors
+$txt-default:           #454951;    //text default dark gray color
+$txt-black:             #000;       //black text color
+$txt-white:             #fff;       //text color white
+$txt-red:               #f00;       //text color red
+$txt-green:             #45c25e;    //text color green
+$txt-yellow:            #ffba00;    //text color yellow
+
+//background colors
+$bgnd-light:            #F7F9FB;    //light background color
+$bgnd-dark:             #8395a8;    //light background color
+$bgnd-black:            #000;       //black background color
+$bgnd-white:            #fff;       //white background color
+$orange-yellow:         #f90;       //orange yellow color
+$orange-yellow-hover:   #ff7800;    //dark orange color
+
+//content placeholder
+$bgnd-strip-image:      #5164ff;    //cornflower blue color
+$bgnd-strip-content:    #8f8fab;    //manatee blue color
+
+//border colors
+$b-default:             #4a5568;    //default border color with opacity
+$b-black:               #000;       //optional border color black
+$b-white:               #fff;       //optional border color black
+$b-yellow:              #f90;       //yellow border color
+
+//shadows colors
+$shadow-light:          #9363ef;    //light purple shadow color with opacity
+$shadow-dark:           #4a5568;    //light purple shadow color with opacity

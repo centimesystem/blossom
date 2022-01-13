@@ -1,0 +1,32 @@
+.touch-area-before {
+  &:before {
+    content:'';
+    position:absolute;
+    top:-8px;
+    left:-9px;
+    width:40px;
+    height:40px;
+  }
+}
+.touch-area-after {
+  &:after {
+    content:'';
+    position:absolute;
+    top:-8px;
+    left:-9px;
+    width:40px;
+    height:40px;
+  }
+}
+
+//create touch area for touch screens
+.icon-touch-32 {
+  width:32px;
+  height:32px;
+}
+
+//create touch area for touch screens
+.icon-touch-44 {
+  width:44px;
+  height:44px;
+}

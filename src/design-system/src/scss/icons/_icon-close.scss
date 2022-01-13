@@ -1,0 +1,32 @@
+//create close/plus icon
+.icon-close, .icon-add {
+  width:18px;
+  height:18px;
+  &:before, &:after {
+    content:'';
+    position:absolute;
+    height:1px;
+    border-top:solid 1px;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+  }
+  &:before {
+    @include transform(rotate(-90deg));
+  }
+}
+
+//rotate plus icon to bring close icon look
+.icon-close {
+  @include transform(rotate(45deg));
+}
+
+//optional - close icon animation when click on the hamburger menu icon
+.icon-close {
+  &.animate {
+    @include animation('rotation 0.7s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+    @include animation-mode(forwards);
+  }
+}

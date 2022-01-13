@@ -1,0 +1,105 @@
+@mixin breakpoint($target-device) {
+
+	//default desktop
+  @if $target-device == default-desktop {
+    @media (max-width:1448px) {
+      @content;
+    }
+  }
+
+	//medium desktop
+	@else if $target-device == laptop {
+    @media (max-width:1380px) {
+      @content;
+    }
+  }
+
+	//medium desktop
+	@else if $target-device == medium-desktop {
+    @media (max-width:1200px) {
+      @content;
+    }
+  }
+
+	//tabs 1024 but given 1050 to avoid edge to edge issues
+  @else if $target-device == iPad-landscape {
+    @media (max-width:1026px) {
+      @content;
+    }
+  }
+
+	//tab portrait
+	@else if $target-device == iPad-portrait {
+    @media (max-width:991px) {
+      @content;
+    }
+  }
+
+	//mobile landscape starts
+	@else if $target-device == mobile {
+    @media (max-width:767px) {
+       @content;
+    }
+  }
+
+	//iPhone 375
+	@else if $target-device == iPhonePlus {
+    @media (max-width:380px) {
+       @content;
+    }
+  }
+
+	//medium phone
+	@else if $target-device == medium-mobile {
+    @media (max-width: 360px) {
+       @content;
+    }
+  }
+
+	//small phone
+  @else if $target-device == small-mobile {
+    @media (max-width: 320px) {
+       @content;
+    }
+  }
+
+	//only desktop
+  @else if $target-device == when-desktop {
+    @media (min-width: 767px) {
+       @content;
+    }
+  }
+
+	//mobile above landscape
+  @else if $target-device == when-mobile-landscape {
+    @media (min-width: 600px) {
+       @content;
+    }
+  }
+
+	//above 991
+	@else if $target-device == when-iPad-portrait {
+    @media (min-width:991px) {
+      @content;
+    }
+  }
+
+	//above 991
+	@else if $target-device == when-desktop-lg {
+    @media (min-width:1026px) {
+      @content;
+    }
+  }
+
+	//large desktop
+	@else if $target-device == large-desktop {
+    @media (min-width:1440px) {
+      @content;
+    }
+  }
+
+	//message
+  @else {
+    @warn "Breakpoints will be supported: desktop, small-desktop, landscape-tablet, portrait-tablet, mobile, iPhonePlus, iPhone, medium-mobile, small-mobile";
+  }
+}

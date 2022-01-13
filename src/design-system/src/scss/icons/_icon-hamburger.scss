@@ -1,0 +1,88 @@
+.hamburger {
+  &.mobile {
+    width:48px;
+    height:48px;
+    i {
+      top:-9px;
+      @include animation('rotation  0.4s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      @include animation-mode(forwards);
+      @include animation-delay(0.1s);
+
+      &:before {
+        @include animation('closeBar2  0.5s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+        @include animation-mode(forwards);
+      }
+      &:after {
+        @include animation('closeBar1  0.6s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+        @include animation-mode(forwards);
+      }
+    }
+    .inner {
+      width:18px;
+      height:6px;
+    }
+    span {
+      right:0px;
+      left:0;
+      height:1px;
+      @include animation-mode(forwards);
+      &:nth-child(1) {
+        top:0;
+        @include animation('hamburgerBar1Default  0.3s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      }
+      &:nth-child(2) {
+        bottom:0;
+        @include animation('hamburgerBar2Default  0.4s cubic-bezier(0.61, 0.03, 0.43, 0.85)');
+      }
+    }
+  }
+  &.desktop {
+    width:40px;
+    height:40px;
+    .inner {
+      width:30px;
+      height:16px;
+    }
+    span {
+      height:2px;
+      &:nth-child(1) {
+        top:0;
+        left:0;
+        right:0;
+      }
+      &:nth-child(2) {
+        top:0;
+        bottom:0;
+        margin:auto;
+        left:6px;
+        right:0;
+      }
+      &:nth-child(3) {
+        bottom:0;
+        left:14px;
+        right:0;
+      }
+    }
+  }
+}
+
+//optional: animations for the menu icons and show close icon if you wish
+.header {
+  &.open {
+    .hamburger {
+      i {
+        display:block;
+      }
+      span {
+        &:nth-child(1) {
+          @include animation('hamburgerBar1  0.2s ease-in-out');
+          @include animation-mode(forwards);
+        }
+        &:nth-child(2) {
+          @include animation('hamburgerBar2  0.3s ease-in-out');
+          @include animation-mode(forwards);
+        }
+      }
+    }
+  }
+}

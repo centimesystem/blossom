@@ -1,0 +1,9 @@
+.quote-mark-right {
+  right:-80px;
+  bottom:-30px;
+  @include transform(rotate(180deg));
+}
+.quote-mark-left {
+  left:-80px;
+  top:-40px;
+}

@@ -1,0 +1,52 @@
+//generate auto cols
+@mixin col($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+			flex:0 0 percentage($i / $grid-columns);
+      -ms-flex:0 0 percentage($i / $grid-columns);
+      max-width:percentage($i / $grid-columns);
+		}
+	}
+}
+
+//generate col-md's
+@mixin col-md($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+		.col-md-#{$i} {
+			flex:0 0 percentage($i / $grid-columns);
+      -ms-flex:0 0 percentage($i / $grid-columns);
+      max-width:percentage($i / $grid-columns);
+		}
+	}
+}
+
+//generate auto cols
+@mixin col-lg($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+			flex:0 0 percentage($i / $grid-columns);
+      -ms-flex:0 0 percentage($i / $grid-columns);
+      max-width:percentage($i / $grid-columns);
+		}
+	}
+}
+
+//generate auto cols
+@mixin col-sm($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+			flex:0 0 percentage($i / $grid-columns);
+      -ms-flex:0 0 percentage($i / $grid-columns);
+      max-width:percentage($i / $grid-columns);
+		}
+	}
+}
+
+//generate auto cols
+@mixin offset($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+		.offset-#{$i} {
+			margin-left:percentage($i / $grid-columns);
+		}
+	}
+}

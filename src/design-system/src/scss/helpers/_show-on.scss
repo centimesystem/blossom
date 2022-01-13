@@ -1,0 +1,62 @@
+//display none for hidden elements
+.hidden {
+  display:none;
+}
+
+[hidden] {
+  display:none;
+}
+
+@include breakpoint(iPad-landscape) {
+  //show elements on iPad landscape
+  .show-on-iPad-l {
+    display:block;
+  }
+
+  //hide elements on iPad landscape
+  .hide-on-iPad-l {
+    display:none;
+  }
+}
+@include breakpoint(iPad-portrait) {
+  //show elements on iPad portrait
+  .show-on-iPad-p {
+    display:block;
+  }
+
+  //hide elements on iPad portrait
+  .hide-on-iPad-p {
+    display:none;
+  }
+}
+@include breakpoint(mobile) {
+  //show elememts on mobile
+  .show-on-mobile, .show-on-mobile-l {
+    display:block;
+  }
+
+  //hide elements on mobile
+  .hide-in-mobile {
+    display:none;
+  }
+}
+@include breakpoint(mobile) {
+  //show elements on mobile portrait
+  .show-on-mobile-p {
+    display:block;
+  }
+}
+
+//show elements above 1024 resolutions
+@include breakpoint(when-desktop-lg) {
+  .show-on-desktop-lg {
+    display:block;
+  }
+}
+
+//show elements above 1024 resolutions
+@include breakpoint(when-desktop) {
+  .show-on-desktop {
+    display:block;
+  }
+}
